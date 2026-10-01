@@ -61,3 +61,24 @@ This disables project-wide automatic detection and registers <code>src/</code>, 
 ## Blockers
 
 No local build gate blockers remain. The exact faulting native module behind the original Windows <code>0xc0000409</code> was not reported by the child process; the diagnosis above is based on the controlled build comparisons and the stable source-scope fix.
+
+## Revalidation on the newly prepared local checkout
+
+- **Verified:** 2026-10-01 19:16 Asia/Jakarta (2026-10-01 12:16 UTC)
+- **Branch / starting commit:** <code>chore/m0-c1-primitives</code> / <code>0492bb41ddc23c50e8626d5693a0928fc3a44302</code>
+- **OS:** Windows 10 Pro, 10.0.19045, 64-bit
+- **Node.js / pnpm:** <code>v24.18.0</code> / <code>11.19.0</code>
+- **Next.js / Tailwind CSS / PostCSS plugin:** <code>16.3.7</code> / <code>4.3.3</code> / <code>4.3.3</code>
+- **Environment:** <code>NODE_OPTIONS</code> unset; <code>.m0a-validation/</code> and <code>.next/</code> were absent before the build. The tracked working tree was clean.
+
+This checkout already contains the committed source-scope fix above. The original failure remains best explained by broad Tailwind v4 automatic source detection interacting with the old checkout's large ignored validation snapshot; the exact native faulting module remains unknown. The clean checkout passed using Node.js <code>v24.18.0</code> without a heap override, so the failure is not reproduced here and a special Node memory setting is not required for these gates.
+
+| Command | Result | Evidence |
+|---|---|---|
+| <code>pnpm install</code> | PASS | Lockfile already up to date; exit code 0. |
+| <code>pnpm lint</code> | PASS | ESLint completed; exit code 0. |
+| <code>pnpm typecheck</code> | PASS | <code>tsc --noEmit</code> completed; exit code 0. |
+| <code>pnpm build</code> #1 | PASS | Turbopack compiled successfully, completed TypeScript and static page generation; exit code 0. |
+| <code>pnpm build</code> #2, immediately consecutive | PASS | Turbopack production build completed; exit code 0. |
+
+No additional technical changes were needed in this revalidation. A diff from starting M0-C.1 commit <code>4c58a02ad9cd0ea88ff74444d6fbb70c998a465f</code> confirms <code>drizzle/0000_extensions_and_primitives.sql</code> is unchanged. No migration command ran and no database was accessed. No blockers remain.
