@@ -2,3 +2,5 @@
 export * from "./enums";
 export * from "./identity";
 export * from "./taxonomy";
+export * from "./media";
+export * from "./lessons";
