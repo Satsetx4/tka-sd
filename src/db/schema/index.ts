@@ -1,2 +1,2 @@
-// M0 schema catalog. Product tables will be added from the reviewed source documents.
-export {};
+// Shared database primitives are introduced before domain tables.
+export * from "./enums";
