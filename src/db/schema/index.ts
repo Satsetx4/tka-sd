@@ -4,3 +4,4 @@ export * from "./identity";
 export * from "./taxonomy";
 export * from "./media";
 export * from "./lessons";
+export * from "./questions";
