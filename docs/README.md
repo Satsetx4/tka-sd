@@ -1,29 +1,38 @@
-# Project documents and authority
+# TKA SD Project Documents
+
+This directory registers the imported project source documents and their authority. The imported files retain their original contents.
 
 ## Authority order
 
-1. **Technical & Product Blueprint — Source of Truth V1.0** is the authority for product scope and business semantics.
-2. **Implementation Specification V1.0** defines the engineering approach and may not silently change the Blueprint.
-3. Database design, migration, taxonomy, and backlog documents implement those two sources.
+1. [Product Blueprint — Source of Truth V1.0](blueprint/TKA_SD_Blueprint_Source_of_Truth_v1.0.md) governs product scope and business decisions.
+2. [Implementation Specification V1.0](implementation/00_Implementation_Specification_V1.0.md) translates that scope into an engineering baseline and cannot silently override the Blueprint.
+3. Reviewed ADRs record approved technical decisions within the first two documents; an ADR cannot override them.
+4. Committed migrations implement the reviewed database design and decisions; they do not define product requirements.
+5. Application code implements the documents above and cannot silently change their contracts.
 
-## Import status
+When sources conflict, stop the affected implementation and resolve the conflict at the highest applicable authority before proceeding. Supporting taxonomy, ERD, migration-plan, and backlog artifacts must remain consistent with this order.
 
-The original documents were referenced in the prior conversation as downloadable artifacts, but they were not included in this repository or available as attachments to this task. This file records their expected presence; it is not a replacement for them.
+## Imported source documents
 
-Expected artifacts to import without rewriting:
+| Document | Repository path | Role |
+|---|---|---|
+| Technical & Product Blueprint — Source of Truth V1.0 | [docs/blueprint/TKA_SD_Blueprint_Source_of_Truth_v1.0.md](blueprint/TKA_SD_Blueprint_Source_of_Truth_v1.0.md) | Product and scope authority |
+| Implementation Specification V1.0 | [docs/implementation/00_Implementation_Specification_V1.0.md](implementation/00_Implementation_Specification_V1.0.md) | Engineering baseline subordinate to the Blueprint |
+| Taxonomy Seed Specification V1.0 | [docs/implementation/01_TKA_Taxonomy_Seed_V1.0.md](implementation/01_TKA_Taxonomy_Seed_V1.0.md) | Taxonomy rules |
+| Taxonomy seed JSON V1.0 | [docs/implementation/01_taxonomy_seed_v1.json](implementation/01_taxonomy_seed_v1.json) | Machine-readable seed paired with the taxonomy specification |
+| Database ERD & Schema V1.0 | [docs/implementation/02_Database_ERD_and_Schema_V1.0.md](implementation/02_Database_ERD_and_Schema_V1.0.md) | Database design reference; import does not create a schema |
+| Database Migration Plan V1.0 | [docs/implementation/03_Database_Migration_Plan_V1.0.md](implementation/03_Database_Migration_Plan_V1.0.md) | Migration sequencing and safety reference; import does not create migrations |
+| M0 Foundation Backlog V1.0 | [docs/implementation/04_M0_Foundation_Backlog_V1.0.md](implementation/04_M0_Foundation_Backlog_V1.0.md) | Source backlog for M0 planning |
+| Engineering package README | [docs/implementation/README.md](implementation/README.md) | Original package index and authority note |
 
-- Product Blueprint / Source of Truth V1.0
-- 00_Implementation_Specification_V1.0.md
-- 01_TKA_Taxonomy_Seed_V1.0.md
-- 01_taxonomy_seed_v1.json
-- 02_Database_ERD_and_Schema_V1.0.md
-- 03_Database_Migration_Plan_V1.0.md
-- 04_M0_Foundation_Backlog_V1.0.md
+The original artifacts were copied without substantive edits. Their own status labels are preserved.
 
-Until the source files are imported and reviewed, this repository keeps the product schema empty. No identity, taxonomy, content, learning, assessment, or commerce tables are inferred from partial conversation text.
+## Repository documentation layout
 
-## Repository layout
+- `blueprint/` — approved product and technical Blueprint source.
+- `implementation/` — original engineering specification package and supporting documents.
+- `adr/` — architecture decision records, subordinate to the Blueprint and Implementation Specification.
 
-- blueprint/ — Product Blueprint and source-of-truth documents
-- implementation/ — Implementation Specification and foundation notes
-- adr/ — reviewed architecture decisions
+## Current checkpoint boundary
+
+M0-A.1 is limited to importing these documents, replacing the availability placeholders, and running the requested repository validation commands. It does not authorize M0-B work. Neon, Drizzle, database implementation, schemas, migrations, authentication, and M1 features remain outside this checkpoint.

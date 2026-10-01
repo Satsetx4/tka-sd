@@ -1,0 +1,358 @@
+{
+  "version": "1.0",
+  "subjects": [
+    {
+      "code": "MAT",
+      "name": "Matematika",
+      "slug": "matematika",
+      "sort_order": 10,
+      "domains": [
+        {
+          "code": "MAT_BIL",
+          "name": "Bilangan",
+          "slug": "bilangan",
+          "sort_order": 10,
+          "topics": [
+            {
+              "code": "MAT_BIL_RAS",
+              "name": "Bilangan Rasional",
+              "slug": "bilangan-rasional",
+              "sort_order": 10
+            },
+            {
+              "code": "MAT_BIL_RAS_EQ",
+              "name": "Pecahan Senilai",
+              "slug": "pecahan-senilai",
+              "sort_order": 20,
+              "parent_code": "MAT_BIL_RAS"
+            },
+            {
+              "code": "MAT_BIL_RAS_CMP",
+              "name": "Membandingkan dan Mengurutkan Pecahan",
+              "slug": "membandingkan-mengurutkan-pecahan",
+              "sort_order": 30,
+              "parent_code": "MAT_BIL_RAS"
+            },
+            {
+              "code": "MAT_BIL_RAS_FORM",
+              "name": "Pecahan, Desimal, dan Persen",
+              "slug": "pecahan-desimal-persen",
+              "sort_order": 40,
+              "parent_code": "MAT_BIL_RAS"
+            },
+            {
+              "code": "MAT_BIL_OP_CACAH",
+              "name": "Operasi Bilangan Cacah",
+              "slug": "operasi-bilangan-cacah",
+              "sort_order": 50,
+              "parent_code": "MAT_BIL_RAS"
+            },
+            {
+              "code": "MAT_BIL_OP_PECAHAN",
+              "name": "Operasi Pecahan",
+              "slug": "operasi-pecahan",
+              "sort_order": 60,
+              "parent_code": "MAT_BIL_RAS"
+            },
+            {
+              "code": "MAT_BIL_KPK_FPB",
+              "name": "Kelipatan, Faktor, KPK, dan FPB",
+              "slug": "kpk-fpb",
+              "sort_order": 70,
+              "parent_code": "MAT_BIL_RAS"
+            }
+          ]
+        },
+        {
+          "code": "MAT_GEO",
+          "name": "Geometri dan Pengukuran",
+          "slug": "geometri-pengukuran",
+          "sort_order": 20,
+          "topics": [
+            {
+              "code": "MAT_GEO_OBJ",
+              "name": "Objek Geometri",
+              "slug": "objek-geometri",
+              "sort_order": 10
+            },
+            {
+              "code": "MAT_GEO_FLAT",
+              "name": "Bangun Datar",
+              "slug": "bangun-datar",
+              "sort_order": 20,
+              "parent_code": "MAT_GEO_OBJ"
+            },
+            {
+              "code": "MAT_GEO_SPATIAL",
+              "name": "Bangun Ruang dan Visualisasi Spasial",
+              "slug": "bangun-ruang-visualisasi-spasial",
+              "sort_order": 30,
+              "parent_code": "MAT_GEO_OBJ"
+            },
+            {
+              "code": "MAT_GEO_MEASURE",
+              "name": "Pengukuran",
+              "slug": "pengukuran",
+              "sort_order": 40
+            },
+            {
+              "code": "MAT_MEASURE_LENGTH",
+              "name": "Panjang",
+              "slug": "panjang",
+              "sort_order": 50,
+              "parent_code": "MAT_GEO_MEASURE"
+            },
+            {
+              "code": "MAT_MEASURE_WEIGHT",
+              "name": "Berat",
+              "slug": "berat",
+              "sort_order": 60,
+              "parent_code": "MAT_GEO_MEASURE"
+            },
+            {
+              "code": "MAT_MEASURE_AREA",
+              "name": "Luas",
+              "slug": "luas",
+              "sort_order": 70,
+              "parent_code": "MAT_GEO_MEASURE"
+            },
+            {
+              "code": "MAT_MEASURE_VOLUME",
+              "name": "Volume",
+              "slug": "volume",
+              "sort_order": 80,
+              "parent_code": "MAT_GEO_MEASURE"
+            },
+            {
+              "code": "MAT_MEASURE_ESTIMATE",
+              "name": "Penaksiran Ukuran",
+              "slug": "penaksiran-ukuran",
+              "sort_order": 90,
+              "parent_code": "MAT_GEO_MEASURE"
+            }
+          ]
+        },
+        {
+          "code": "MAT_DATA",
+          "name": "Data",
+          "slug": "data",
+          "sort_order": 30,
+          "topics": [
+            {
+              "code": "MAT_DATA_PRESENT",
+              "name": "Penyajian Data",
+              "slug": "penyajian-data",
+              "sort_order": 10
+            },
+            {
+              "code": "MAT_DATA_USE",
+              "name": "Pengambilan, Analisis, dan Interpretasi Data",
+              "slug": "analisis-interpretasi-data",
+              "sort_order": 20
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "code": "MAT_KNOW",
+          "name": "Pengetahuan/Pemahaman Matematika",
+          "sort_order": 10
+        },
+        {
+          "code": "MAT_REP",
+          "name": "Representasi Matematis",
+          "sort_order": 20
+        },
+        {
+          "code": "MAT_REASON",
+          "name": "Penalaran",
+          "sort_order": 30
+        },
+        {
+          "code": "MAT_PROBLEM",
+          "name": "Pemecahan Masalah Matematis",
+          "sort_order": 40
+        },
+        {
+          "code": "MAT_CONNECT",
+          "name": "Koneksi Matematis",
+          "sort_order": 50
+        }
+      ]
+    },
+    {
+      "code": "BIN",
+      "name": "Bahasa Indonesia",
+      "slug": "bahasa-indonesia",
+      "sort_order": 20,
+      "domains": [
+        {
+          "code": "BIN_READ",
+          "name": "Membaca",
+          "slug": "membaca",
+          "sort_order": 10,
+          "topics": [
+            {
+              "code": "BIN_TOPIC_INFO",
+              "name": "Membaca Teks Informasi",
+              "slug": "teks-informasi",
+              "sort_order": 10
+            },
+            {
+              "code": "BIN_TOPIC_FICTION",
+              "name": "Membaca Teks Fiksi",
+              "slug": "teks-fiksi",
+              "sort_order": 20
+            },
+            {
+              "code": "BIN_TOPIC_VOCAB",
+              "name": "Kosakata dan Makna",
+              "slug": "kosakata-makna",
+              "sort_order": 30
+            },
+            {
+              "code": "BIN_TOPIC_EXPLICIT",
+              "name": "Informasi Tersurat",
+              "slug": "informasi-tersurat",
+              "sort_order": 40
+            },
+            {
+              "code": "BIN_TOPIC_INFERENCE",
+              "name": "Informasi Tersirat dan Simpulan",
+              "slug": "inferensi-simpulan",
+              "sort_order": 50
+            },
+            {
+              "code": "BIN_TOPIC_EVALUATION",
+              "name": "Evaluasi Isi Teks",
+              "slug": "evaluasi-isi",
+              "sort_order": 60
+            },
+            {
+              "code": "BIN_TOPIC_APPRECIATION",
+              "name": "Apresiasi Teks Fiksi",
+              "slug": "apresiasi-teks-fiksi",
+              "sort_order": 70
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "code": "BIN_TEXTUAL",
+          "name": "Pemahaman Tekstual",
+          "sort_order": 10
+        },
+        {
+          "code": "BIN_INFER",
+          "name": "Pemahaman Inferensial",
+          "sort_order": 20
+        },
+        {
+          "code": "BIN_EVAL",
+          "name": "Evaluasi dan Apresiasi",
+          "sort_order": 30
+        }
+      ],
+      "indicators": [
+        {
+          "code": "BIN_TX_VOCAB",
+          "competency_code": "BIN_TEXTUAL",
+          "description": "Mengidentifikasi penggunaan kosakata umum dan khusus dalam berbagai bidang."
+        },
+        {
+          "code": "BIN_TX_OBJECT",
+          "competency_code": "BIN_TEXTUAL",
+          "description": "Mengidentifikasi objek berdasarkan kosakata yang digunakan dalam teks fiksi atau nonfiksi."
+        },
+        {
+          "code": "BIN_TX_RESTRUCTURE",
+          "competency_code": "BIN_TEXTUAL",
+          "description": "Menyusun kembali informasi dari teks dalam bentuk ikhtisar/bagan."
+        },
+        {
+          "code": "BIN_TX_EXPLICIT",
+          "competency_code": "BIN_TEXTUAL",
+          "description": "Mengidentifikasi informasi tersurat dalam teks."
+        },
+        {
+          "code": "BIN_IN_MAIN",
+          "competency_code": "BIN_INFER",
+          "description": "Menyimpulkan ide pokok, gagasan pendukung, amanat, tokoh, peristiwa, dan/atau nilai-nilai dalam teks."
+        },
+        {
+          "code": "BIN_IN_CHANGE",
+          "competency_code": "BIN_INFER",
+          "description": "Menyimpulkan perubahan sederhana pada objek, karakter, dan/atau latar dalam teks fiksi atau nonfiksi."
+        },
+        {
+          "code": "BIN_IN_EXPRESSION",
+          "competency_code": "BIN_INFER",
+          "description": "Menjelaskan makna ungkapan yang digunakan dalam teks."
+        },
+        {
+          "code": "BIN_EV_RELEVANCE",
+          "competency_code": "BIN_EVAL",
+          "description": "Menilai relevansi peristiwa dalam teks dengan kehidupan sehari-hari berdasarkan pengalaman atau pengetahuan pribadi."
+        },
+        {
+          "code": "BIN_EV_CONSISTENCY",
+          "competency_code": "BIN_EVAL",
+          "description": "Menilai kesesuaian antarunsur dan/atau antarinformasi dalam teks."
+        },
+        {
+          "code": "BIN_EV_EMOTION",
+          "competency_code": "BIN_EVAL",
+          "description": "Menyimpulkan respons emosional terhadap unsur teks fiksi."
+        }
+      ]
+    }
+  ],
+  "enums": {
+    "cognitive_level": [
+      "UNDERSTAND",
+      "APPLY",
+      "REASON"
+    ],
+    "difficulty": [
+      "EASY",
+      "MEDIUM",
+      "HARD"
+    ],
+    "question_type": [
+      "SINGLE_CHOICE",
+      "MULTI_SELECT",
+      "CATEGORY"
+    ],
+    "usage_type": [
+      "PRACTICE",
+      "ASSESSMENT",
+      "BOTH"
+    ],
+    "content_status": [
+      "DRAFT",
+      "IN_REVIEW",
+      "VERIFIED",
+      "PUBLISHED",
+      "ARCHIVED"
+    ],
+    "source_type": [
+      "OFFICIAL_REFERENCE",
+      "THIRD_PARTY_REFERENCE",
+      "ORIGINAL",
+      "REGENERATED"
+    ],
+    "stimulus_type": [
+      "TEXT",
+      "IMAGE",
+      "TABLE",
+      "GRAPH",
+      "MIXED"
+    ],
+    "text_type": [
+      "INFORMATION",
+      "FICTION"
+    ]
+  }
+}

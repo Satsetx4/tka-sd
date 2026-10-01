@@ -12,10 +12,12 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - Use pnpm for package and script operations.
 - Keep this checkpoint within M0-A: the Next.js application shell and developer tooling only.
+- M0-A.1 is limited to importing the original documents, updating the document register and guardrails, and running its specified validation commands. Do not begin M0-B or another checkpoint without an explicit user request.
+- Keep commits scoped to the approved checkpoint; do not stage unrelated working-tree files.
 - Do not add Neon, Drizzle, database connections, schemas, migrations, seeds, or database commands during M0-A.
 - Do not add M1 content management, practice, tryout, analytics, payment, parent dashboard, AI, teacher, or school features.
-- The original Product Blueprint, Implementation Specification, taxonomy seed, ERD, migration plan, and M0 backlog are not present in the repository or referenced conversation attachments. Do not reconstruct them or invent product and architecture decisions from partial conversation summaries.
-- Read `docs/README.md` before changing product scope. Treat the Product Blueprint as authoritative and the Implementation Specification as subordinate to it once the original documents are imported and reviewed.
+- The original Blueprint and engineering source documents are imported verbatim under `docs/blueprint/` and `docs/implementation/`; read `docs/README.md` and the source documents before changing scope or architecture. Do not reconstruct, summarize into replacements, or edit their substantive content.
+- Follow the authority order in `docs/README.md`: Product Blueprint V1 → Implementation Specification V1 → reviewed ADRs → committed migrations → code. Supporting documents cannot override higher-authority sources.
 - Keep the current app structure minimal: Next.js routes, root layout, and global styles live in `src/app`. Do not add domain-specific folders until the authoritative Implementation Specification defines them.
 - Use TypeScript strict mode, Tailwind CSS, and React Server Components by default. Add client components only when an interaction requires them.
 - Do not hardcode learner names, scores, grades, or completion states.
