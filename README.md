@@ -33,8 +33,18 @@ pnpm start      Serve the production build
 
 ## Repository documents
 
-See [docs/README.md](docs/README.md) for the authority order and import status of the Product Blueprint, Implementation Specification, taxonomy, ERD, migration plan, and M0 backlog. The original source artifacts were not available in this repository or in the referenced conversation attachments when M0-A was prepared; the placeholders under `docs/` are not substitutes for those documents.
+The source documents have been imported into this repository:
+
+- [Product Blueprint V1.0](docs/blueprint/TKA_SD_Blueprint_Source_of_Truth_v1.0.md)
+- [Implementation Specification V1.0](docs/implementation/00_Implementation_Specification_V1.0.md)
+- [Taxonomy Seed Specification V1.0](docs/implementation/01_TKA_Taxonomy_Seed_V1.0.md)
+- [Taxonomy Seed JSON V1.0](docs/implementation/01_taxonomy_seed_v1.json)
+- [Database ERD and Schema V1.0](docs/implementation/02_Database_ERD_and_Schema_V1.0.md)
+- [Database Migration Plan V1.0](docs/implementation/03_Database_Migration_Plan_V1.0.md)
+- [M0 Foundation Backlog V1.0](docs/implementation/04_M0_Foundation_Backlog_V1.0.md)
+
+See [docs/README.md](docs/README.md) for the document register and authority map.
 
 ## Scope
 
-Keep this checkpoint to the application bootstrap. Do not add database integration or product features until the relevant source documents are available and the next checkpoint is explicitly authorized.
+Keep changes within the explicitly authorized checkpoint. M0-A.2 is limited to correcting this README and recording M0-A validation results. Database integration, schemas, migrations, authentication, and M1 features remain out of scope until separately authorized.
