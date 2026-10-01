@@ -33,6 +33,6 @@ The original artifacts were copied without substantive edits. Their own status l
 - `implementation/` — original engineering specification package and supporting documents.
 - `adr/` — architecture decision records, subordinate to the Blueprint and Implementation Specification.
 
-## Current checkpoint boundary
+## M0-B checkpoint boundary
 
-M0-A.1 is limited to importing these documents, replacing the availability placeholders, and running the requested repository validation commands. It does not authorize M0-B work. Neon, Drizzle, database implementation, schemas, migrations, authentication, and M1 features remain outside this checkpoint.
+M0-B adds typed server-side environment validation and empty Neon/Drizzle connection and migration plumbing. It does not include business migrations, identity or taxonomy schema/seed, authentication, or M1 features. The imported Blueprint and Implementation Specification remain unchanged; use their authority order above for all later decisions.
