@@ -5,3 +5,4 @@ export * from "./taxonomy";
 export * from "./media";
 export * from "./lessons";
 export * from "./questions";
+export * from "./practice";
