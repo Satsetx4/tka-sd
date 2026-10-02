@@ -8,25 +8,54 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-## TKA SD repository constraints
+## Repository-wide constraints
+
+### Source of truth
+
+- Read docs/README.md before architecture-sensitive work, then read every applicable Blueprint, Implementation Specification, and reviewed ADR.
+- Preserve this authority order: Product Blueprint > Implementation Specification > reviewed ADRs > committed migrations > application code. Supporting documents, task prompts, and agent reports cannot override higher-authority sources.
+- If authoritative sources conflict materially, stop the affected work and identify the conflict before implementing a behavior or schema decision.
+- Original source documents under docs/blueprint/ and docs/implementation/ are reference baselines. Implementation tasks must not substantively rewrite them.
+
+### Git and worktree safety
 
 - Use pnpm for package and script operations.
-- Keep this checkpoint within M0-A: the Next.js application shell and developer tooling only.
-- M0-A.1 is limited to importing the original documents, updating the document register and guardrails, and running its specified validation commands. Do not begin M0-B or another checkpoint without an explicit user request.
-- Keep commits scoped to the approved checkpoint; do not stage unrelated working-tree files.
-- Do not add Neon, Drizzle, database connections, schemas, migrations, seeds, or database commands during M0-A.
-- Do not add M1 content management, practice, tryout, analytics, payment, parent dashboard, AI, teacher, or school features.
-- The original Blueprint and engineering source documents are imported verbatim under `docs/blueprint/` and `docs/implementation/`; read `docs/README.md` and the source documents before changing scope or architecture. Do not reconstruct, summarize into replacements, or edit their substantive content.
-- Follow the authority order in `docs/README.md`: Product Blueprint V1 → Implementation Specification V1 → reviewed ADRs → committed migrations → code. Supporting documents cannot override higher-authority sources.
-- Keep the current app structure minimal: Next.js routes, root layout, and global styles live in `src/app`. Do not add domain-specific folders until the authoritative Implementation Specification defines them.
-- Use TypeScript strict mode, Tailwind CSS, and React Server Components by default. Add client components only when an interaction requires them.
-- Do not hardcode learner names, scores, grades, or completion states.
-- Keep credentials out of source control. `.env.example` may contain safe placeholders only; never commit populated `.env` files.
-- Before starting another project checkpoint or expanding scope, wait for an explicit user request.
+- Inspect Git status before changing files and preserve unrelated tracked and untracked local work.
+- Do not use reset --hard, clean, destructive checkout, force push, history rewriting, or silent auto-stash.
+- Safe synchronization uses fetch followed by fast-forward only. If tracked changes block synchronization or branches have diverged, stop and report the state.
+- Keep staging and commits within the active checkpoint. Stage only reviewed files belonging to that checkpoint.
 
-## M0-A validation commands
+### Database and secrets
 
-- `pnpm install`
-- `pnpm lint`
-- `pnpm typecheck`
-- `pnpm build`
+- Use development or preview databases unless the active task explicitly authorizes another environment. Production databases are read-only by default; do not migrate or write to production without explicit user authorization.
+- Do not use drizzle push. Apply database changes through reviewed migrations.
+- Treat committed or applied historical migrations as immutable unless a separately approved recovery plan authorizes a repair.
+- Never commit or log credentials, tokens, connection strings, or populated environment files. Keep secrets server-side.
+
+### Checkpoint scope
+
+- Follow the explicit contract for the active checkpoint, including allowed files, required gates, and stop boundary. The task contract defines work scope but does not override source-of-truth documents.
+- Do not start a later checkpoint or implement adjacent features automatically.
+- Stop at the stated checkpoint boundary and leave the result ready for independent audit.
+
+### Engineering defaults
+
+- Use TypeScript strict mode and React Server Components by default. Add client components only when browser interaction requires them.
+- Keep database access and domain logic server-side.
+- Do not hardcode learner names, scores, grades, completion results, or private user state.
+- Keep answer keys and explanations out of browser responses until the authoritative product contract allows their disclosure at the relevant evaluation boundary.
+
+### Testing and validation
+
+- Run the validation gates specified by the active checkpoint.
+- When code changes, run lint, typecheck, and build at minimum unless the checkpoint explicitly sets a narrower gate.
+- Use existing test tooling; do not add dependencies unless the active task authorizes them.
+- Record validation evidence for architecture-sensitive checkpoints under docs/validation/.
+
+### Multi-agent hierarchy
+
+- ChatGPT Chat is the orchestrator/controller and performs an independent audit after checkpoint delivery.
+- Codex is the lead and integrator. Antigravity CLI sub-agents may inspect, propose, or edit isolated files only when Codex explicitly delegates a bounded task.
+- Give each delegated task clear acceptance criteria and non-overlapping file ownership. Treat agent output as advisory until Codex reviews it.
+- Antigravity must not push or merge to main. Codex reviews every delegated result and runs the authoritative final gates.
+- Follow docs/development/agent-workflow.md for the delegation and handoff process.
