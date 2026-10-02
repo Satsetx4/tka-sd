@@ -1,6 +1,6 @@
 # M0-D.3-pre Validation — Repository & Multi-Agent Guardrail Refresh
 
-- **Verified:** 2026-10-02 10.11.20 +07:00 (Asia/Jakarta)
+- **Verified:** 2026-10-02 10.14.41 +07:00 (Asia/Jakarta)
 - **Repository:** Satsetx4/tka-sd (D:\!AGY\tka-sd)
 - **Origin:** https://github.com/Satsetx4/tka-sd.git
 - **Base SHA:** a44d4b5cdb4cd9862a4592900d3653969c4c79b2
@@ -14,6 +14,9 @@ Verified the repository root and origin before work. The initial branch was main
 
 No existing local work was present to preserve. No reset, clean, destructive checkout, auto-stash, rebase, or force operation was used.
 
+## GitHub delivery
+
+The checkpoint commit 05fdb304200136fa5e2c2cf14ad66e214c247659 was pushed to docs/m0-d3-pre-agent-guardrails. At integration time, local main and origin/main were both at base SHA a44d4b5cdb4cd9862a4592900d3653969c4c79b2, and the checkpoint commit was a direct descendant. A fast-forward advanced local and remote main to 05fdb304200136fa5e2c2cf14ad66e214c247659. The remote topic branch and origin/main were both verified at that SHA; the local worktree was clean. This closeout update records that delivery state; its resulting commit SHA is reported in the task handoff.
 ## Files changed
 
 - AGENTS.md — replaced stale M0-A-only rules with durable repository constraints. The framework-generated Next.js rules block remains unchanged.
