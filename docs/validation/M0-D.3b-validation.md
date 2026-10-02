@@ -12,7 +12,8 @@
 - Safe sync: initial worktree was clean on `main`; `git fetch --all --prune` completed; local `main` was already at `origin/main`; no reset, stash, destructive checkout, rebase, or history rewrite was used.
 - Base SHA: `8b00e10524eafdb407d9449ded6e139a05aa6e1d` (same as `origin/main` when the feature branch was created).
 - Working branch: `feat/m0-d3b-practice-services`.
-- Final commit and push/integration state: pending final gates and delivery.
+- Implementation commit: `42e1c82ec2eb5a2a96d62305da8d38e935eb2767` (`feat(m0-d3b): add practice domain services`).
+- Delivery: `origin/feat/m0-d3b-practice-services` was pushed, then `main` was fast-forwarded from the audited base to the implementation commit and pushed. This report’s post-delivery update is a separate documentation-only commit shared by both refs.
 
 ## Changed files
 
