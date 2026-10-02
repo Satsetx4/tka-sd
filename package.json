@@ -15,7 +15,9 @@
     "db:migrate": "drizzle-kit migrate",
     "db:seed:taxonomy": "node --conditions=react-server --import tsx scripts/seed/taxonomy.ts",
     "test:seed:taxonomy": "node --import tsx --test scripts/seed/taxonomy-input.test.ts",
-    "test:questions:domain": "node --conditions=react-server --import tsx --test scripts/questions/question-domain.test.ts"
+    "test:questions:domain": "node --conditions=react-server --import tsx --test scripts/questions/question-domain.test.ts",
+    "test:practice:domain": "node --conditions=react-server --import tsx --test scripts/practice/practice-domain.test.ts",
+    "test:practice:integration": "node --conditions=react-server --import tsx --test scripts/practice/practice-integration.test.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
