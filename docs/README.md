@@ -36,3 +36,10 @@ The original artifacts were copied without substantive edits. Their own status l
 ## Implementation and checkpoint evidence
 
 The imported source documents above remain authoritative for product and engineering decisions. The explicit contract for each task defines its current scope and stop boundary. Checkpoint status, validation evidence, and deferred items are recorded in docs/validation/; those records support implementation review and do not change the authority order above.
+
+## Execution roadmap
+
+- [V1 Master Execution Plan](roadmap/V1_MASTER_EXECUTION_PLAN.md)
+- [V1 Execution Status](roadmap/V1_EXECUTION_STATUS.md)
+
+These are operational planning and status documents subordinate to the authority order above. They guide execution sequence and record progress, but cannot override the Blueprint or Implementation Specification.

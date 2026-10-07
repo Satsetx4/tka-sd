@@ -55,7 +55,13 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ### Multi-agent hierarchy
 
 - ChatGPT Chat is the orchestrator/controller and performs an independent audit after checkpoint delivery.
-- Codex is the lead and integrator. Antigravity CLI sub-agents may inspect, propose, or edit isolated files only when Codex explicitly delegates a bounded task.
+- Codex is the lead and integrator. Use native Codex sub-agents only for explicitly delegated bounded tasks.
+- Do not use Antigravity CLI or agy. This repository-specific rule overrides any broader tool allowance in supporting workflow or validation documents.
 - Give each delegated task clear acceptance criteria and non-overlapping file ownership. Treat agent output as advisory until Codex reviews it.
-- Antigravity must not push or merge to main. Codex reviews every delegated result and runs the authoritative final gates.
-- Follow docs/development/agent-workflow.md for the delegation and handoff process.
+- Codex reviews every delegated result and runs the authoritative final gates.
+- Follow docs/development/agent-workflow.md for the delegation and handoff process, subject to this repository's tooling rule.
+
+### Roadmap execution
+
+- Before starting new project work, read docs/roadmap/V1_MASTER_EXECUTION_PLAN.md and docs/roadmap/V1_EXECUTION_STATUS.md after the authority documents.
+- The roadmap defines execution sequence and status but does not override the Blueprint, Implementation Specification, or reviewed ADRs.
